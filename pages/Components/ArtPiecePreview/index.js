@@ -1,9 +1,11 @@
 import Image from "next/image";
-
-export default function ArtPiecePreview({ image, title, artist }) {
+import Link from "next/link";
+export default function ArtPiecePreview({ slug, image, title, artist }) {
   return (
     <li>
-      <Image src={image} alt={title} width={400} height={250} />
+      <Link href={`/art-pieces/${slug}`}>
+        <Image src={image} alt={title} width={400} height={250} />
+      </Link>
       <p>
         {title} by {artist}
       </p>
